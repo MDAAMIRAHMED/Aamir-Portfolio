@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(0, 0, 33);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fixed Nav Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(18, 18, 62);
+    padding: 0 20px;
+    position: fixed;
+    /* Change to fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure it stays on top of other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Optional: add a shadow for better visibility */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+nav ul li a:hover {
+    color: rgb(153, 153, 226);
+    font-size: 1.1rem;
+}
+
+.left {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.firstSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    /* Ensure content starts below fixed nav */
+}
+
+.leftSection {
+    font-size: 1.5rem;
+    max-width: 50%;
+}
+
+.rightSection img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.purple {
+    color: rgb(170, 107, 228);
+}
+
+#element {
+    color: rgb(170, 107, 228);
+    font-weight: bold;
+}
+
+/* About Section */
+#about {
+    background-color: rgb(0, 0, 33);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+#about .container {
+    max-width: 1200px;
+    text-align: left;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: rgb(170, 107, 228);
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Skills Section */
+#skills {
+    background-color: rgb(0, 0, 33);
+    padding: 80px 20px;
+    /* Increased padding to ensure heading is not under the navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills .container {
+    max-width: 1200px;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 1.8rem;
+    /* Reduced font size */
+    margin-bottom: 40px;
+    /* Increased margin to give space below the heading */
+    color: rgb(170, 107, 228);
+}
+
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill {
+    background-color: rgb(18, 18, 62);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 0 1 calc(20% - 20px);
+    /* 5 items per row, with a gap of 20px */
+    box-sizing: border-box;
+}
+
+.skill img {
+    width: 50px;
+    /* Reduced size of skill icons */
+    height: 50px;
+    /* Reduced size of skill icons */
+    margin-bottom: 10px;
+}
+
+.skill h3 {
+    font-size: 1rem;
+    /* Reduced font size for skill names */
+    color: rgb(170, 107, 228);
+}
+
+/* Projects Section */
+#projects {
+    background-color: rgb(0, 0, 33);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects .container {
+    max-width: 1200px;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: rgb(170, 107, 228);
+}
+
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    background-color: rgb(18, 18, 62);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    flex: 0 1 calc(45% - 20px);
+    /* Two items per row with a gap of 20px */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project h3 {
+    font-size: 1.3rem;
+    color: rgb(170, 107, 228);
+    margin-bottom: 10px;
+}
+
+.project a {
+    text-decoration: none;
+    color: rgb(153, 153, 226);
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: rgb(170, 107, 228);
+}
+
+#contact {
+    background-color: rgb(0, 0, 33);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: rgb(170, 107, 228);
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.email-link {
+    display: inline-block;
+    background-color: rgb(170, 107, 228);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.email-link:hover {
+    background-color: rgb(153, 153, 226);
+}
+
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: rgb(170, 107, 228);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: rgb(153, 153, 226);
+}
