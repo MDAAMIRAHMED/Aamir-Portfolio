@@ -2,11 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
-html,
-body {
+html, body {
     height: 100%;
 }
 
@@ -14,8 +12,6 @@ body {
     background-color: rgb(0, 0, 33);
     color: white;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 /* Fixed Nav Bar */
@@ -27,13 +23,10 @@ nav {
     background-color: rgb(18, 18, 62);
     padding: 0 20px;
     position: fixed;
-    /* Change to fixed */
     top: 0;
     width: 100%;
     z-index: 1000;
-    /* Ensure it stays on top of other content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Optional: add a shadow for better visibility */
 }
 
 nav ul {
@@ -56,19 +49,101 @@ nav ul li a:hover {
     font-size: 1.1rem;
 }
 
-.left {
-    font-size: 2rem;
-    font-weight: bold;
+/* Hamburger menu (hidden by default) */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: rgb(18, 18, 62);
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: block; /* Show the menu when the hamburger is clicked */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on small screens */
+    }
+
+    .left {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust the first section for mobile */
+    
+
+    .firstSection {
+        flex-direction: column; /* Stack sections vertically */
+        justify-content: center;
+        padding: 80px 20px; /* Adjust padding for mobile view */
+        margin-top: 80px; /* Ensure section starts below the fixed navbar */
+    }
+    
+    .leftSection {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+        min-height: 6.4em; /* Approximate height for 3 lines of text on mobile */
+        text-align: center; /* Center text on mobile */
+        min-width: 100%;
+    }
+
+    .rightSection img {
+        margin-top: 20px; /* Add spacing between sections */
+        max-height: none; /* Remove height constraints on mobile */
+        min-width: 100%;
+    }
+
+    /* Adjust sections for mobile */
+    #about, #skills, #projects, #contact {
+        padding: 60px 10px;
+    }
+
+    #about h2, #skills h2, #projects h2, #contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .skills-wrapper, .projects-wrapper {
+        flex-direction: column;
+    }
+
+    .skill, .project {
+        flex: 0 1 100%;
+    }
+
+    /* Ensure proper text alignment for mobile */
+    #about p, #skills p, #projects p {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Section Styling */
 .firstSection {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 20px;
-    height: calc(100vh - 80px);
+    padding: 100px 20px;
     margin-top: 80px;
-    /* Ensure content starts below fixed nav */
 }
 
 .leftSection {
@@ -99,8 +174,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding: 0 20px;
+    padding: 110px 20px;
 }
 
 #about .container {
@@ -124,7 +198,7 @@ nav ul li a:hover {
 /* Skills Section */
 #skills {
     background-color: rgb(0, 0, 33);
-    padding: 80px 20px;
+    padding: 100px 20px;
     /* Increased padding to ensure heading is not under the navbar */
     display: flex;
     flex-direction: column;
@@ -179,7 +253,7 @@ nav ul li a:hover {
 /* Projects Section */
 #projects {
     background-color: rgb(0, 0, 33);
-    padding: 80px 20px;
+    padding: 100px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,3 +370,4 @@ nav ul li a:hover {
 .social-links a:hover {
     color: rgb(153, 153, 226);
 }
+
